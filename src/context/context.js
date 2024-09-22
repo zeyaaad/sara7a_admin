@@ -9,7 +9,6 @@ const MyProvider = ({ children }) => {
     const[isLogIn,setIsLogIn]=useState(null)
   const token=localStorage.getItem("admin_token")
     const Host="https://sara7a-app-back-end.vercel.app";
-    const FrontFost="https://sara7aapp-one.vercel.app";
     async function checkauth(){
         if(!token){
           return setIsLogIn(false)
@@ -69,7 +68,7 @@ function timeAgo(date) {
   return `منذ ${diffInYears} سنة`;
 }
     return (
-        <MyContext.Provider value={{ Host,token,checkauth,isLogIn,setIsLogIn,ProtectAuth,ProtectRoute,logOut,FrontFost,timeAgo }}>
+        <MyContext.Provider value={{ Host,token,checkauth,isLogIn,setIsLogIn,ProtectAuth,ProtectRoute,logOut,timeAgo }}>
             {children}
         </MyContext.Provider>
     );
