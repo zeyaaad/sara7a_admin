@@ -42,8 +42,8 @@ export default function Messages() {
             {messages.map((message,i)=>
             <tr>
                 <td> {i+1} </td>
-                <td> {message.userId?.name} </td>
-                <td> {message.userId?.email} </td>
+                <td> {message?.userId?.name||"اكونت محذوف"} </td>
+                <td> {message?.userId?.email||"اكونت محذوف"} </td>
                 <td> {message.messageText||"لا يوجد"} </td>
             </tr>)}
         </tbody>
