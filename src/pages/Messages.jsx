@@ -18,6 +18,8 @@ export default function Messages() {
                 }
             })
             setMessages(res.data.data)
+            
+            console.log(res)
         } catch (error) {
             console.log(error)
         }
@@ -40,8 +42,8 @@ export default function Messages() {
             {messages.map((message,i)=>
             <tr>
                 <td> {i+1} </td>
-                <td> {message.userId.name} </td>
-                <td> {message.userId.email} </td>
+                <td> {message.userId?.name} </td>
+                <td> {message.userId?.email} </td>
                 <td> {message.messageText||"لا يوجد"} </td>
             </tr>)}
         </tbody>
